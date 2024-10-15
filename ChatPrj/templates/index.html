@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Room</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: #2b30a3;
+        }
+
+        .parent {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .child {
+            background-color: rgba(80, 80, 80, 0.474); 
+            padding: 50px;
+            width: 400px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label {
+            font-size: 1rem;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            background-color: #373636;
+            color: #fff;
+            font-size: 1rem;
+        }
+
+        input::placeholder {
+            color: #9a9898;
+        }
+
+        button {
+            padding: 14px 30px;
+            border: none;
+            border-radius: 25px;
+            background-color: #2b30a3;
+            color: #fff;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background 0.5s, transform 0.5s;
+        }
+
+        button:hover {
+            background-color: #1a237e;
+            transform: translateY(-5px);
+        }
+
+        @media only screen and (max-width: 600px) {
+            .child {
+                width: 90%;
+                padding: 30px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            input {
+                font-size: 0.9rem;
+            }
+
+            button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child">
+            <h1>Enter Room</h1>
+            <form action="" method="POST">
+                {% csrf_token %}
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+
+                <label for="room">Room Name</label>
+                <input type="text" id="room" name="room" placeholder="Enter room name" required>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
